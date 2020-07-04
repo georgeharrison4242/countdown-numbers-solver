@@ -5,6 +5,12 @@ class Expression:
     def eval():
         pass
 
+    def isLeaf():
+        pass
+
+    def getChildren():
+        pass
+
     # __str__: Void -> String
     # paranthesised string form of expression
     def __str__():
@@ -19,6 +25,9 @@ class Val(Expression):
             return (self.value,)
         return ()
 
+    def isLeaf(self):
+        return True
+
     def __str__(self):
         return str(self.value)
 
@@ -32,6 +41,12 @@ class App(Expression):
             (v,valid) = self.op.apply(le[0],re[0])
             if valid: return (v,)
         return ()
+
+    def isLeaf(self):
+        return False
+
+    def myInfo(self):
+        return (self.op, self.l, self.r)
 
     def __str__(self):
         return "(" + str(self.l) + str(self.op) + str(self.r) + ")"
