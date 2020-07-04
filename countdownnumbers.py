@@ -23,15 +23,3 @@ class CountdownNumbers:
                     closest = (closest[:j+1]+[(str(e),v)]+closest[j+1:])[:sols]
 
         return closest
-
-
-
-
-
-s = CountdownNumbers()
-t = time.time()
-results = s.solve([1,3,7,10,25,50],832)
-print("target: 832, numbers: 1,3,7,10,25,50")
-for result in results:
-    print("Expression: " + result[0] + " = " + str(result[1]))
-print("time taken: "+str(time.time()-t))
