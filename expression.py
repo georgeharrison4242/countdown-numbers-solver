@@ -37,7 +37,6 @@ class App(Expression):
         return "(" + str(self.l) + str(self.op) + str(self.r) + ")"
 
 
-
 class Op:
     # apply: Int, Int -> (Int,Bool)
     # returns (v,valid) where valid is true if operation follows countdown rules
@@ -53,10 +52,10 @@ class Sub(Op):
     def __str__(self): return "-"
 
 class Mul(Op):
-    def apply(self, l, r): return (l*r,l!=1 and r!=1 and l<=r)
+    def apply(self, l, r): return (l*r,l!=1 and r!=1 and l<=r and l!=0 and r!=0)
     def __str__(self): return "x"
 
 class Div(Op):
-    def apply(self, l, r): return (int(l/r),l%r==0 and r!=1)
+    def apply(self, l, r): return (int(l/r),l%r==0 and r!=1 and r!=0)
     def __str__(self): return "/"
 
