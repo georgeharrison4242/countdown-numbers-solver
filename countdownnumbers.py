@@ -25,3 +25,10 @@ class CountdownNumbers:
                     closest = (closest[:j+1]+[(e,v)]+closest[j+1:])[:sols]
 
         return closest
+
+    # check: [String] , [Int], Int -> Bool
+    # sol is a list of expressions in string form, i.e. sol=["5x4=20","20-1=19","19*25=475"]
+    def check(self, sol, ns, n):
+
+        parser = Parser()
+
