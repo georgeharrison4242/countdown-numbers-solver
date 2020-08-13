@@ -2,6 +2,11 @@ from expression import *
 
 class ExprPrinter:
     
+    def prettyString(self, e):
+        steps = self.addSteps(e, [])[::-1]
+        return '\n'.join(steps)
+
+
     def pprint(self, e):
         steps =  self.addSteps(e, [])[::-1]
 
