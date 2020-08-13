@@ -17,7 +17,7 @@ class CountdownNumbers:
             for (e,v) in evs:
                 delta = abs(v-n)
 
-                if len(closest)<sols: # add first 10 results to closest
+                if len(closest)<sols: # add first sols results to closest
                     closest.append((e,v))
                 else: # update closest with new value
                     j=sols-1
@@ -29,6 +29,6 @@ class CountdownNumbers:
     # check: [String] , [Int], Int -> Bool
     # sol is a list of expressions in string form, i.e. sol=["5x4=20","20-1=19","19*25=475"]
     def check(self, sol, ns, n):
-
-        parser = Parser()
+        pass
+        #parser = Parser()
 

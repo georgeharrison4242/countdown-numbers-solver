@@ -1,25 +1,14 @@
-from countdownnumbers import CountdownNumbers
+from model import Model
 from prettyprinter import ExprPrinter
+from view import SimplePyQtView
+from controller import Controller
+from PyQt5.QtWidgets import *
 import sys
 
-if __name__=="__main__":
-
-    numbers = sys.argv[1:]
-
-    try:
-        numbers = list(map(lambda x: int(x), numbers))
-
-
-        target = numbers[0]
-        workingNumbers = numbers[1:]
-
-        solver = CountdownNumbers()
-        solutions = solver.solve(workingNumbers,target,3)
-
-        pprinter = ExprPrinter()
-        for (e,v) in solutions:
-            pprinter.pprint(e)
-
-    except:
-        raise ValueError("must provide >=2 integers: targetNum, num1, num2, etc.")
+if __name__=="__main__":   
+    app = QApplication(sys.argv)
+    view = SimplePyQtView()
+    model = Model()
+    controller = Controller(view,model)
+    app.exec_()
     
